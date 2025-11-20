@@ -7,7 +7,7 @@ export default function ContactPanel() {
 
       <p className="text-sm mb-4">We're here to help with customs clearance, freight forwarding, warehousing and transport. Reach out and we'll respond promptly.</p>
 
-      <div className="space-y-3 text-sm">
+      <div className="space-y-3 text-sm text-navy">
         <div>
           <div className="font-semibold">Phone</div>
           <div>0726 876 555</div>
@@ -15,7 +15,7 @@ export default function ContactPanel() {
 
         <div>
           <div className="font-semibold">Email</div>
-          <div>divnojenterprises@gmail.com</div>
+          <div>divnojenterprisesltd@gmail.com</div>
         </div>
 
         <div>
@@ -25,7 +25,7 @@ export default function ContactPanel() {
       </div>
 
       <div className="mt-6">
-        <a href="/contact" className="inline-block bg-navy text-white px-4 py-2 rounded-md">Contact us</a>
+        <a href="/contact" className="inline-block bg-gold text-navy px-4 py-2 rounded-md font-semibold">Contact us</a>
       </div>
     </aside>
   );
