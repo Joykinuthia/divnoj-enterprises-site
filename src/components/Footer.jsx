@@ -20,39 +20,39 @@ export default function Footer() {
 
         {/* Contact Info */}
         <div className="space-y-3">
-          <h4 className="text-lg font-bold text-yellow-400 tracking-wide hover:text-yellow-300 transition duration-300">
+          <h4 className="text-lg font-bold text-yellow-400 tracking-wide transition duration-300">
             Contact Information
           </h4>
           <ul className="space-y-1 text-sm leading-relaxed">
-            <li>
+            <li className="hover:text-yellow-300 hover:scale-105 hover:drop-shadow-lg transition-all duration-300">
               <span className="font-semibold">Phone:</span> 
-              <a href="tel:+254726876555" className="hover:text-yellow-300 transition-colors duration-300 ml-1">0726 876 555</a> / 
-              <a href="tel:+254736398377" className="hover:text-yellow-300 transition-colors duration-300 ml-1">0736 398 377</a>
+              <a href="tel:+254726876555" className="ml-1">0726 876 555</a> / 
+              <a href="tel:+254736398377" className="ml-1">0736 398 377</a>
             </li>
-            <li>
+            <li className="hover:text-yellow-300 hover:scale-105 hover:drop-shadow-lg transition-all duration-300">
               <span className="font-semibold">Email:</span> 
-              <a href="mailto:divnojenterprises@gmail.com" className="hover:text-yellow-300 transition-colors duration-300 ml-1">divnojenterprises@gmail.com</a>
+              <a href="mailto:divnojenterprises@gmail.com" className="ml-1">divnojenterprises@gmail.com</a>
             </li>
-            <li>
+            <li className="hover:text-yellow-300 hover:scale-105 hover:drop-shadow-lg transition-all duration-300">
               <span className="font-semibold">Website:</span> 
-              <a href="https://www.divnojenterprises.co.ke" className="hover:text-yellow-300 transition-colors duration-300 ml-1">www.divnojenterprises.co.ke</a>
+              <a href="https://www.divnojenterprises.co.ke" className="ml-1">www.divnojenterprises.co.ke</a>
             </li>
-            <li>
+            <li className="hover:text-yellow-300 hover:scale-105 hover:drop-shadow-lg transition-all duration-300">
               <span className="font-semibold">Address:</span> Industrial Area, Nairobi, Kenya
             </li>
           </ul>
         </div>
 
-        {/* Hours */}
+        {/* Working Hours */}
         <div className="space-y-3">
-          <h4 className="text-lg font-bold text-yellow-400 tracking-wide hover:text-yellow-300 transition duration-300">
+          <h4 className="text-lg font-bold text-yellow-400 tracking-wide transition duration-300">
             Working Hours
           </h4>
           <ul className="space-y-1 text-sm leading-relaxed">
-            <li>
+            <li className="hover:text-yellow-300 hover:scale-105 hover:drop-shadow-lg transition-all duration-300">
               <span className="font-semibold">Mon – Sat:</span> 08:00 hrs – 18:00 hrs
             </li>
-            <li>
+            <li className="hover:text-yellow-300 hover:scale-105 hover:drop-shadow-lg transition-all duration-300">
               <span className="font-semibold">Sundays & Holidays:</span> Closed
             </li>
           </ul>
@@ -65,10 +65,10 @@ export default function Footer() {
         &copy; {new Date().getFullYear()} DIVNO J. ENTERPRISES LTD. All rights reserved.
       </div>
 
-      {/* 🌟 Hover & Glow Effects */}
+      {/* Optional Glow Animations */}
       <style>
         {`
-          footer h3, footer h4, footer a {
+          footer h3, footer h4, footer a, footer li {
             transition: all 0.3s ease;
           }
 
@@ -81,12 +81,17 @@ export default function Footer() {
             text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
           }
 
-          footer a:hover {
+          footer li:hover {
             text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+          }
+
+          footer a:hover {
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
           }
         `}
       </style>
     </footer>
   );
 }
+
 
