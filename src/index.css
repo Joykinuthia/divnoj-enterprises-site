@@ -2,37 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
+/* base styles */
+:root {
+  --navy: #0A1A44;
+  --gold: #F2C94C;
+  --clean-bg: #F6F7FB;
+}
+
 body {
+  @apply bg-clean-bg text-gray-800;
   font-family: 'Inter', sans-serif;
-  /* subtle warm background for the whole site */
-  background-color: #f8fafc; /* Tailwind gray-50 */
-  color: #0f172a; /* slate-900 */
 }
 
-.container { max-width: 1100px; }
+/* headings */
+h1,h2,h3 { font-family: 'Poppins', sans-serif; }
 
-.hero-bg {
-  background-size: cover;
-  background-position: center;
-}
-
-/* Navbar link underline animation */
+/* link underline effect */
 .nav-link {
   position: relative;
+  padding-bottom: 4px;
 }
 .nav-link::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
-  bottom: -6px;
+  bottom: 0;
   height: 2px;
   width: 0%;
-  background-color: #6366f1; /* indigo-500 */
-  transition: width 160ms ease-in-out;
+  background: var(--navy);
+  transition: width .25s ease;
 }
-.nav-link:hover::after {
-  width: 100%;
+.nav-link:hover::after { width: 100%; }
+
+/* simple page fade */
+.page {
+  opacity: 0;
+  animation: fadeIn .45s ease forwards;
+}
+@keyframes fadeIn { to { opacity: 1; } }
+
+/* hero helpers */
+.hero-overlay {
+  background: linear-gradient(180deg, rgba(10,26,68,0.6) 0%, rgba(10,26,68,0.55) 100%);
 }
 
-/* Active NavLink uses border-b via Tailwind; add stronger contrast */
+.btn-accent {
+  background: linear-gradient(90deg, #FF7F50, #E86A19);
+  color: white;
+}
+
+/* small responsive helpers */
+@media (min-width: 768px) {
+  .container { max-width: 960px; }
+}
+
 

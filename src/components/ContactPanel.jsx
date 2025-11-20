@@ -1,45 +1,32 @@
-import React, { useState } from 'react';
+import React from "react";
 
-export default function ContactPanel(){
-  const [showPhone, setShowPhone] = useState(false);
-  const [showEmail, setShowEmail] = useState(false);
-
-  const phone = '0726876555';
-  const email = 'divnojenterprisesltd@gmail.com';
-
-  const copy = async (text) => {
-    try {
-      await navigator.clipboard.writeText(text);
-      alert('Copied to clipboard: ' + text);
-    } catch(e) {
-      // fallback: prompt
-      window.prompt('Copy to clipboard: Ctrl+C, Enter', text);
-    }
-  };
-
+export default function ContactPanel() {
   return (
-    <div className="bg-white p-4 rounded shadow-sm">
-      <h4 className="font-semibold mb-3">Contacts</h4>
-      <div className="flex gap-3">
-        <button onClick={() => setShowPhone(s => !s)} className="px-3 py-2 border rounded">Phone</button>
-        <button onClick={() => setShowEmail(s => !s)} className="px-3 py-2 border rounded">Email</button>
+    <aside className="w-full md:w-1/3 bg-white rounded-md shadow p-6">
+      <h3 className="text-xl font-heading text-navy font-semibold mb-4">Get in touch</h3>
+
+      <p className="text-sm mb-4">We're here to help with customs clearance, freight forwarding, warehousing and transport. Reach out and we'll respond promptly.</p>
+
+      <div className="space-y-3 text-sm">
+        <div>
+          <div className="font-semibold">Phone</div>
+          <div>0726 876 555</div>
+        </div>
+
+        <div>
+          <div className="font-semibold">Email</div>
+          <div>divnojenterprises@gmail.com</div>
+        </div>
+
+        <div>
+          <div className="font-semibold">Address</div>
+          <div>Industrial Area, Nairobi, Kenya</div>
+        </div>
       </div>
 
-      <div className="mt-3">
-        {showPhone && (
-          <div className="mb-2">
-            <a href={`tel:${phone}`} className="font-medium text-indigo-600 mr-3">{phone}</a>
-            <button onClick={() => copy(phone)} className="text-sm text-gray-500">Copy</button>
-          </div>
-        )}
-
-        {showEmail && (
-          <div>
-            <a href={`mailto:${email}`} className="font-medium text-indigo-600 mr-3">{email}</a>
-            <button onClick={() => copy(email)} className="text-sm text-gray-500">Copy</button>
-          </div>
-        )}
+      <div className="mt-6">
+        <a href="/contact" className="inline-block bg-navy text-white px-4 py-2 rounded-md">Contact us</a>
       </div>
-    </div>
-  )
+    </aside>
+  );
 }

@@ -1,38 +1,26 @@
-import React from 'react';
+import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 text-gray-200 mt-12">
-      <div className="container mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+    <footer className="bg-navy text-white mt-12">
+      <div className="container mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-start gap-6">
         <div>
-          <h4 className="font-semibold mb-2">Divnoj Enterprises Ltd</h4>
-          <p>Nairobi, Kenya</p>
-          <img src="/assets/logo.png" alt="logo" className="h-12 mt-4" />
+          <h3 className="font-heading text-xl">DIVNO J. ENTERPRISES</h3>
+          <p className="max-w-md text-sm mt-2">Reliable clearing & forwarding services — customs clearance, freight forwarding, warehousing, transport & consultancy.</p>
         </div>
 
         <div>
-          <h5 className="font-semibold mb-2">Business Hours</h5>
-          <p className="text-sm">Mon – Fri: 8:00 AM – 5:00 PM</p>
-          <p className="text-sm">Sat: 9:00 AM – 1:00 PM</p>
-          <p className="text-sm">Sun & Public Holidays: Closed</p>
+          <h4 className="font-semibold">Contact</h4>
+          <p className="text-sm mt-2">Phone: <strong>0726 876 555</strong></p>
+          <p className="text-sm">Email: <strong>divnojenterprises@gmail.com</strong></p>
         </div>
 
         <div>
-          <h5 className="font-semibold mb-2">Contacts</h5>
-          <p className="text-sm">Email: <a href="mailto:divnojenterprisesltd@gmail.com" className="text-gray-300">divnojenterprisesltd@gmail.com</a></p>
-          <p className="text-sm">Phone: <a href="tel:0726876555" className="text-gray-300">0726 876 555</a></p>
-          <h5 className="font-semibold mt-4 mb-2">Quick Links</h5>
-          <nav className="text-sm">
-            <a href="/" className="block text-gray-300">Home</a>
-            <a href="/about" className="block text-gray-300">About</a>
-            <a href="/services" className="block text-gray-300">Services</a>
-          </nav>
+          <h4 className="font-semibold">Hours</h4>
+          <p className="text-sm mt-2">Mon - Sat: 08:00 - 18:00</p>
         </div>
       </div>
-
-      <div className="border-t border-slate-800 text-center py-4 text-sm text-gray-400">
-        © {new Date().getFullYear()} Divnoj Enterprises. All rights reserved.
-      </div>
+      <div className="border-t border-navy/30 text-center py-4 text-sm">&copy; {new Date().getFullYear()} DIVNO J. ENTERPRISES. All rights reserved.</div>
     </footer>
   );
 }

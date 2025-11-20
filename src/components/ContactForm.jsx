@@ -1,47 +1,70 @@
-import React, { useState } from 'react';
+// src/components/ContactForm.jsx
+import React, { useState } from "react";
 
-export default function ContactForm() {
-  const [status, setStatus] = useState('');
+const ContactForm = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
-  function handleSubmit(e) {
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const form = e.target;
-    const name = form.name.value.trim();
-    const email = form.email.value.trim();
-    const phone = form.phone.value.trim();
-    const message = form.message.value.trim();
-
-    if (!name || !email || !message) {
-      setStatus('Please fill name, email and message.');
-      return;
-    }
-
-    // Build a mailto link to open the user's email client with the filled content.
-    const subject = encodeURIComponent(`Contact from website: ${name}`);
-    const bodyLines = [
-      `Name: ${name}`,
-      `Email: ${email}`,
-      `Phone: ${phone}`,
-      '',
-      `Message:`,
-      message,
-    ];
-    const body = encodeURIComponent(bodyLines.join('\n'));
-    const mailto = `mailto:divnojenterprisesltd@gmail.com?subject=${subject}&body=${body}`;
-
-    // Attempt to open mail client
-    window.location.href = mailto;
-    setStatus('Opening your mail client...');
-  }
+    alert(`Thank you, ${formData.name}! Your message has been sent.`);
+    setFormData({ name: "", email: "", message: "" });
+  };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white shadow-sm rounded-lg p-6 grid grid-cols-1 md:grid-cols-2 gap-4" id="contact-form">
-      <input name="name" placeholder="Full Name" className="p-2 border rounded" required />
-      <input name="email" type="email" placeholder="Email Address" className="p-2 border rounded" required />
-      <input name="phone" placeholder="Phone Number" className="p-2 border rounded" />
-      <textarea name="message" placeholder="Message" className="p-2 border rounded md:col-span-2" rows={5} required />
-      <button type="submit" className="md:col-span-2 bg-indigo-600 text-white px-4 py-2 rounded">Send Message</button>
-      {status && <div className="md:col-span-2 text-sm text-gray-600">{status}</div>}
+    <form
+      onSubmit={handleSubmit}
+      className="bg-white shadow-md rounded-lg p-6 w-full md:w-2/3"
+    >
+      <h2 className="text-2xl font-bold mb-4">Send Us a Message</h2>
+      <div className="mb-4">
+        <label className="block mb-1 font-medium">Name</label>
+        <input
+          type="text"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          required
+          className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+      <div className="mb-4">
+        <label className="block mb-1 font-medium">Email</label>
+        <input
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+          className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+      <div className="mb-4">
+        <label className="block mb-1 font-medium">Message</label>
+        <textarea
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+          required
+          rows="5"
+          className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+      <button
+        type="submit"
+        className="bg-blue-500 text-white font-bold px-6 py-2 rounded hover:bg-blue-600 transition"
+      >
+        Send Message
+      </button>
     </form>
   );
-}
+};
+
+export default ContactForm;
