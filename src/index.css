@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', sans-serif;
+  /* subtle warm background for the whole site */
+  background-color: #f8fafc; /* Tailwind gray-50 */
+  color: #0f172a; /* slate-900 */
+}
+
+.container { max-width: 1100px; }
+
+.hero-bg {
+  background-size: cover;
+  background-position: center;
+}
+
+/* Navbar link underline animation */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 2px;
+  width: 0%;
+  background-color: #6366f1; /* indigo-500 */
+  transition: width 160ms ease-in-out;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Active NavLink uses border-b via Tailwind; add stronger contrast */
+
